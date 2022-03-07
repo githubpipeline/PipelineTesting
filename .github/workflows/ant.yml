@@ -34,8 +34,8 @@ jobs:
         sudo apt-get -y install google-chrome-stable
         sudo add-apt-repository ppa:mozillateam/firefox-next && sudo apt install firefox
         echo $PROVAR_HOME
-        cd $GITHUB_WORKSPACE/test/ANT
-        xvfb-run ant -f build.xml 
+        cd $GITHUB_WORKSPACE/
+        xvfb-run ant -f build1.xml 
     
     - uses: actions/upload-artifact@v2
       with:
