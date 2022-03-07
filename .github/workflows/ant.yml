@@ -33,15 +33,15 @@ jobs:
         sudo echo "deb [arch=amd64]  http://dl.google.com/linux/chrome/deb/ stable main" >>sudo tee -a /etc/apt/sources.list.d/google-chrome.list
         sudo apt-get -y install google-chrome-stable
         echo $PROVAR_HOME
-        cd $GITHUB_WORKSPACE/PipelineTesting/ANT
+        cd $GITHUB_WORKSPACE/ANT
         xvfb-run ant -f build1.xml 
     
     - uses: actions/upload-artifact@v2
       with:
         name: Execution Report
-         path:${{ github.workspace }}/PipelineTesting/ANT/Results/*
+         path:${{ github.workspace }}/ANT/Results/*
     - uses: actions/upload-artifact@v2
       if: failure()
       with:
         name: Execution Report                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
-         path:${{ github.workspace }}/PipelineTesting/ANT/Results/*
+         path:${{ github.workspace }}/ANT/Results/*
